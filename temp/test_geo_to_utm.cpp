@@ -9,13 +9,13 @@
 
 int main(int argc, char** argv)
 {
-  double lat = 32.0/180.0*M_PI;
-  double lon = -120/180.0*M_PI;
+  double lat = 19.598519694/180.0*M_PI;
+  double lon = 110.93085608/180.0*M_PI;
   double N;
   double E;
   GridZone zone = GRID_AUTO;
   Hemisphere hemi = HEMI_AUTO;
-  const Ellipse* e = ellipse(ELLIPSE_WGS84);
+  const Ellipse* e = standard_ellipse(ELLIPSE_WGS84);
   geographic_to_grid(e->a, e->e2, lat, lon, &zone, &hemi, &N, &E);
   std::cout << std::fixed << std::setprecision(2)
             << E << ' ' << N << ' '<< zone << ' ' << hemi << std::endl;
